@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -6,17 +6,17 @@
         .run(appRun);
 
     /* @ngInject */
-    function appRun(routerHelper,envConfig) {
+    function appRun(routerHelper) {
         var otherwise = '/404';
-        routerHelper.configureStates(getStates(envConfig), otherwise);
+        routerHelper.configureStates(getStates(), otherwise);
     }
 
-    function getStates(envConfig) {
+    function getStates() {
         return [
             {
                 state: '404',
                 config: {
-                    url: envConfig.URL_PREFIX + '/404',
+                    url: '/404',
                     templateUrl: 'app/core/404.html',
                     title: '404'
                 }
